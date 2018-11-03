@@ -3930,3 +3930,12 @@ Processing by PostsController#new as HTML
   Rendered posts/_form.html.erb (4.2ms)
   Rendered posts/new.html.erb within layouts/application (5.6ms)
 Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/4" for 146.168.96.149 at 2018-11-03 12:29:39 +0000
+Cannot render console from 146.168.96.149! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 4]]
+  Rendered authors/show.html.erb within layouts/application (22.2ms)
