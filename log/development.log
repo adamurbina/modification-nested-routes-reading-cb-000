@@ -4066,3 +4066,57 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 17]]
   [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
   Rendered posts/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 58ms (Views: 46.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/authors/5/posts/17/edit" for 146.168.96.149 at 2018-11-03 12:55:21 +0000
+Cannot render console from 146.168.96.149! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"5", "id"=>"17"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."id" = ? LIMIT 1  [["author_id", 5], ["id", 17]]
+  Rendered posts/_form.html.erb (3.5ms)
+  Rendered posts/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 32ms (Views: 25.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for 146.168.96.149 at 2018-11-03 12:55:22 +0000
+Cannot render console from 146.168.96.149! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/17" for 146.168.96.149 at 2018-11-03 12:55:23 +0000
+Cannot render console from 146.168.96.149! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/5/posts/17/edit" for 146.168.96.149 at 2018-11-03 12:55:23 +0000
+Cannot render console from 146.168.96.149! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"5", "id"=>"17"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."id" = ? LIMIT 1[0m  [["author_id", 5], ["id", 17]]
+  Rendered posts/_form.html.erb (2.3ms)
+  Rendered posts/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 47ms (Views: 42.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 146.168.96.149 at 2018-11-03 12:55:26 +0000
+Cannot render console from 146.168.96.149! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered posts/_form.html.erb (7.7ms)
+  Rendered posts/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.4ms)
